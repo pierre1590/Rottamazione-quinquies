@@ -2,7 +2,7 @@
 
 Un'applicazione web progressiva (PWA) moderna per calcolare il piano di ammortamento della "Rottamazione Quinquies"  con interessi al 3% e rateizzazione fino a 54 rate (9 anni).
 
-🔗 **Live Demo:** [Inserisci qui il link Vercel una volta deployato]
+🔗 **Live Demo:** [https://rottamazione-quinquies.vercel.app/](https://rottamazione-quinquies.vercel.app/)
 
 ![Screenshot App](public/screenshot.png) 
 
