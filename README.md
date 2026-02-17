@@ -4,7 +4,7 @@ Un'applicazione web progressiva (PWA) moderna per calcolare il piano di ammortam
 
 🔗 **Live Demo:** [Inserisci qui il link Vercel una volta deployato]
 
-![Screenshot App](public/screenshot-placeholder.png) <!-- (Opzionale: metti uno screen in public) -->
+![Screenshot App](public/screenshot.png) 
 
 ## ✨ Caratteristiche Principali
 
