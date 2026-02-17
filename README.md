@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# 🧾 Rottamazione Quinquies Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un'applicazione web progressiva (PWA) moderna per calcolare il piano di ammortamento della "Rottamazione Quinquies"  con interessi al 3% e rateizzazione fino a 54 rate (9 anni).
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [Inserisci qui il link Vercel una volta deployato]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot App](public/screenshot-placeholder.png) <!-- (Opzionale: metti uno screen in public) -->
 
-## React Compiler
+## ✨ Caratteristiche Principali
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📱 **Mobile First & Glassmorphism**: Design moderno stile iOS con effetti "liquid glass" e blur.
+- ⚡ **PWA Offline-Ready**: Funziona perfettamente senza internet una volta installata (Service Worker attivo).
+- 🧮 **Algoritmo Finanziario Preciso**:
+  - **Rata 1 (31 Luglio)**: Solo capitale (senza interessi).
+  - **Rate 2-N (Bimestrali)**: Rata costante alla francese (capitale + interessi 3% annuo).
+  - **Vincolo 100€**: Blocca il calcolo se la rata scende sotto il minimo di legge.
+- 📄 **Export PDF & Stampa**: Genera un documento PDF professionale con tabella ammortamento completa.
+- ⌨️ **UX Ottimizzata**: Input numerici smart per tastierini mobili, selezione rapida "Max Rate".
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologie Utilizzate
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 18** + **TypeScript** (Vite)
+- **Tailwind CSS v4** (Stili utility-first)
+- **Vite PWA Plugin** (Gestione offline e installazione)
+- **jsPDF** + **AutoTable** (Generazione PDF client-side)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Installazione Locale
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Vuoi provare il progetto sul tuo computer?
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Clona la repository**:
+    ```bash
+    git clone https://github.com/pierre1590/rottamazione-pwa.git
+    cd rottamazione-pwa
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2.  **Installa le dipendenze**:
+    ```bash
+    npm install
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3.  **Avvia il server di sviluppo**:
+    ```bash
+    npm run dev
+    ```
+    Visita `http://localhost:####`.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📱 Come Installare su Smartphone (PWA)
+
+1.  Apri il sito dal browser (Safari su iOS, Chrome su Android).
+2.  Tocca il tasto **Condividi** (iOS) o il **Menu** (Android).
+3.  Seleziona **"Aggiungi alla schermata Home"**.
+4.  L'app apparirà come un'icona nativa e funzionerà anche offline!
+
+## 📦 Build per Produzione
+
+Per creare la versione ottimizzata da caricare su Vercel/Netlify:
+
+```bash
+npm run build
+npm run preview  # Per testare la build (Service Worker attivo)
 ```
